@@ -1,0 +1,120 @@
+:root {
+    --primary-color: #00b98e;
+    --primary-dark-color: #02ab83;
+    --primary-light-colors: #02ab83;
+    --accent-color: #0e2e50;
+
+    --white: #EFFDF5;
+    --neutral: #666565;
+
+    font-size: 18px;
+}
+
+.nav-change:hover {
+    background-color: var(--primary-color) !important;
+    color: white !important;
+    border-radius: 10%;
+}
+
+.bg-primary {
+    background-color: var(--primary-color) !important;
+}
+
+.text-primary {
+    color: var(--primary-color) !important;
+}
+
+.btn-accent {
+    background-color: var(--accent-color);
+    color: white;
+}
+
+.card-bg-rounded-4 {
+    padding: 0.75%;
+    border-radius: 5%;
+}
+
+.rounded-icon-container {
+    border-radius: 50%;
+    padding: 1rem;
+    border-color: var(--primary-color) !important;
+    border: dashed;
+    margin: 0 auto;
+    margin-top: 2%;
+}
+
+.card-primary {
+    border-color: var(--primary-color) !important;
+    border: dashed;
+}
+
+.text-card {
+    font-size: 17px;
+    font-weight: bold;
+    margin-top: 2%;
+}
+
+.my-img {
+   max-width: 100%;
+    height: auto;
+}
+
+hr {
+    color: var(--accent-color);
+    margin-left: 25%;
+}
+
+.p-footer {
+    font-size: 16px;
+}
+
+.text-footer {
+    font-size: 12px;
+}
+
+.myform-control {
+    padding: 1px;
+    font-size: 12px;
+}
+
+.margin-footer {
+    margin-left: 75%;
+    text-decoration: none;
+    color: black;
+    margin-bottom: 0 !important;
+}
+
+.border-top-left-footer {
+   border-top-left-radius:  5%;
+}
+
+.border-top-right-footer {
+    border-top-right-radius:  5%; 
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+.container-md{
+    max-width: 85%;
+}
+
+.bg-btn {
+    background-color: rgb(33, 129, 116);
+
+}
+
+
+
+@media screen and (max-width: 767px) {
+    .border-top-right-footer {
+      border-top-right-radius: 0%;
+    }
+
+    .border-top-left-footer {
+        border-top-left-radius:  5%;
+        border-top-right-radius: 5%;
+     }
+}

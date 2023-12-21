@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Annunci</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
+    
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body class="bg-success bg-opacity-10">
+    
+    
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg bg-white shadow ">
+        <div class="container-fluid px-5">
+            
+            <a class="navbar-brand d-flex align-items-center" href="#">
+                <img src="./Images/logo.png" alt="">
+                <h2 class="mb-0 text-primary">Presto.it</h2>
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            
+            <!-- Menu -->
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                
+                <!-- ms auto text center -->
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0 text-center">
+                    <li class="nav-item">
+                        <a class="nav-change nav-link active" aria-current="page" href="./index.html">Home</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-change nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Categorie
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Action</a></li>
+                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-change nav-link" href="./announcements.html">Annunci</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Fine Navbar -->
+    
+    
+    
+    
+    
+    <div class="container-md">   
+    
+    <!-- Search and Submit form -->
+    <div class="container p-4 bg-primary">
+        <form id="filteringForm" class="row g-4">
+            <div class="col-12 col-md-6">
+                <div class="form-floating">
+                    <input type="text" class="form-control" id="searchInput" placeholder="Cerca">
+                    <label for="searchInput">Cerca</label>
+                </div>
+            </div>
+            <div class="col-12 col-md-6">
+                <div class="form-floating">
+                    <select class="form-select" id="categorySelect">
+                        <option selected value="">Tutti gli annunci</option>
+                        <!-- <option value="elettronica">Elettronica</option>
+                        <option value="valori">Motori</option> -->
+                    </select>
+                    <label for="categorySelect">Filtra per categorie</label>
+                </div>
+            </div>
+            <div class="col-12 col-md-3">
+                <div class="form-floating">
+                    <input type="number" class="form-control" id="minPriceInput" min="0" placeholder="Min price">
+                    <label for="minPriceInput">Min Price</label>
+                </div>
+            </div>
+            <div class="col-12 col-md-3">
+                <div class="form-floating">
+                    <input type="number" class="form-control" id="maxPriceInput" min="0" placeholder="Max price">
+                    <label for="maxPriceInput">Max Price</label>
+                </div>
+            </div>
+            
+            
+            <div class="col-12 col-md-3">
+                <div class="form-floating">
+                    <select class="form-select" id="sortSelect">
+                        <option selected value="">Nessun Ordine</option>
+                        <option value="ascByPrice">Dal meno costoso</option>
+                        <option value="descByPrice">Dal più costoso</option>
+
+                        <option value="ascByDate">Dal meno recente</option>
+                        <option value="descByDate">Dal più recente</option>
+
+                        <option value="ascByAlpha">Dalla A alla Z</option>
+                        <option value="descByAlpha">Dalla Z alla A</option>
+
+                    </select>
+                    <label for="sortSelect">Ordina Annunci</label>
+                </div>
+            </div>
+            
+            
+            <div class="col-12 col-md-3">
+                <input class="btn btn-accent w-100 h-100" type="submit" value="Cerca">
+            </div>
+        </form>
+    </div>
+    <!-- Fine Search and Submit form --> 
+    
+    
+    
+    
+    <!--Inizio Card con immagini -->
+    <div class="container p-4">
+        <div id="announcementsRow" class="row g-4">
+            <!-- <div class="col-12 col-md-6 col-xl-4 ">
+                <div class="card">
+                    <div class="position-relative">
+                        <img class="card-img-top" src="https://picsum.photos/seed/123/640/480">
+                        <span class="position-absolute top-0 end-0 badge bg-primary px-4 py-2">SEARCH</span>
+                        <!-- <span class="position-absolute top-0 end-0 badge bg-danger px-4 py-2">SELL</span> -->
+                    <!-- </div>
+                    
+                    <div class="card-body">
+                        <p class="mb-1 text-primary fs-5 fw-semibold">€120.25</p>
+                        <h5 class="card-title display-5">Huawei X5</h5>
+                        <p class="card-text text-muted">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    </div>
+
+                        <div class="card-footer d-flex justify-content-around p-3 bg-white text-primary">
+                            <p class="mb-0"><i class="bi bi-heart-fill"></i><span> Like</span></p>
+                            <p class="mb-0"><i class="bi bi-bookmark-check-fill"></i><span> Elettronica</span></p>
+                            <p class="mb-0"><i class="bi bi-calendar-fill"></i><span> 27/3/2023</span></p>
+                        </div>
+                </div>   
+            </div>
+
+
+
+            <div class="col-12 col-md-6 col-xl-4 ">
+                <div class="card">
+                    <div class="position-relative">
+                        <img class="card-img-top" src="https://picsum.photos/seed/123/640/480">
+                        <span class="position-absolute top-0 end-0 badge bg-primary px-4 py-2">SEARCH</span>
+                        <!-- <span class="position-absolute top-0 end-0 badge bg-danger px-4 py-2">SELL</span> -->
+                    <!-- </div>
+                    
+                    <div class="card-body">
+                        <p class="mb-1 text-primary fs-5 fw-semibold">€120.25</p>
+                        <h5 class="card-title display-5">Huawei X5</h5>
+                        <p class="card-text text-muted">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    </div>
+
+                        <div class="card-footer d-flex justify-content-around p-3 bg-white text-primary">
+                            <p class="mb-0"><i class="bi bi-heart-fill"></i><span> Like</span></p>
+                            <p class="mb-0"><i class="bi bi-bookmark-check-fill"></i><span> Elettronica</span></p>
+                            <p class="mb-0"><i class="bi bi-calendar-fill"></i><span> 27/3/2023</span></p>
+                        </div>
+                </div>
+            </div> -->
+
+
+
+
+
+
+<!-- 
+            <div class="col-12 col-md-6 col-lg-4 ">
+                <div class="card">
+                    <div class="position-relative">
+                        <img class="card-img-top" src="https://picsum.photos/seed/123/640/480">
+                        <span class="position-absolute top-0 end-0 badge bg-primary px-4 py-2">SEARCH</span> -->
+                        <!-- <span class="position-absolute top-0 end-0 badge bg-danger px-4 py-2">SELL</span> -->
+                    <!-- </div> -->
+                    
+                    <!-- <div class="card-body">
+                        <p class="mb-1 text-primary fs-5 fw-semibold">€120.25</p>
+                        <h5 class="card-title display-5">Huawei X5</h5>
+                        <p class="card-text text-muted">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    </div>
+
+                        <div class="card-footer d-flex justify-content-around p-3 bg-white text-primary">
+                            <p class="mb-0"><i class="bi bi-heart-fill"></i><span> Like</span></p>
+                            <p class="mb-0"><i class="bi bi-bookmark-check-fill"></i><span> Elettronica</span></p>
+                            <p class="mb-0"><i class="bi bi-calendar-fill"></i><span> 27/3/2023</span></p>
+                        </div>
+                </div> 
+            </div>
+
+ -->
+
+
+<!-- 
+            <div class="col-12 col-md-6 col-lg-4 ">
+                <div class="card">
+                    <div class="position-relative">
+                        <img class="card-img-top" src="https://picsum.photos/seed/123/640/480">
+                        <span class="position-absolute top-0 end-0 badge bg-primary px-4 py-2">SEARCH</span> -->
+                        <!-- <span class="position-absolute top-0 end-0 badge bg-danger px-4 py-2">SELL</span> -->
+                    <!-- </div> -->
+                    
+                    <!-- <div class="card-body">
+                        <p class="mb-1 text-primary fs-5 fw-semibold">€120.25</p>
+                        <h5 class="card-title display-5">Huawei X5</h5>
+                        <p class="card-text text-muted">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    </div>
+
+                        <div class="card-footer d-flex justify-content-around p-3 bg-white text-primary">
+                            <p class="mb-0"><i class="bi bi-heart-fill"></i><span> Like</span></p>
+                            <p class="mb-0"><i class="bi bi-bookmark-check-fill"></i><span> Elettronica</span></p>
+                            <p class="mb-0"><i class="bi bi-calendar-fill"></i><span> 27/3/2023</span></p>
+                        </div>
+                </div> 
+            </div>  -->
+
+
+
+        </div>
+    </div>
+    
+    </div>
+    <!-- Fine container-md -->
+    
+    
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+
+  
+    
+    <script src="./announcements.js"></script>
+</body>
+</html>
